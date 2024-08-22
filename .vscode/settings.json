@@ -1,0 +1,13 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "name": "anubhavdb",
+            "database": "${workspaceFolder:capmapp}/db.sqlite"
+        }
+    ],
+    "SAP HANA Database Explorer.ShowXsAdvancedConnections": true,
+    "SAP HANA Project Explorer.bind.confirm existing service": false,
+    "SAP HANA Project Explorer.bind.confirm automatic undeployment": false
+}

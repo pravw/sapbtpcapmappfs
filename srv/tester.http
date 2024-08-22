@@ -1,0 +1,125 @@
+### get the service document
+
+http://localhost:4004/odata/v4/CatalogService
+
+### get service metadata
+
+http://localhost:4004/odata/v4/CatalogService/$metadata
+
+
+### get all employee data 
+
+
+http://localhost:4004/odata/v4/CatalogService/EmployeeSet
+
+
+### pagination
+
+http://localhost:4004/odata/v4/CatalogService/EmployeeSet?$top=2&$skip=2
+
+
+### filtering
+
+http://localhost:4004/odata/v4/CatalogService/EmployeeSet?$filter=salaryAmount ge 1000000
+
+
+### counting
+
+http://localhost:4004/odata/v4/CatalogService/EmployeeSet/$count
+
+
+### by key 
+
+
+http://localhost:4004/odata/v4/CatalogService/EmployeeSet/02BD2137-0890-1EEA-A6C2-BB55C197E7FB
+
+
+### post-to create new employee   
+post http://localhost:4004/odata/v4/CatalogService/EmployeeSet
+Content-Type:  application/json
+
+{
+ 
+  "nameFirst": "guru",
+  "nameMiddle": null,
+  "nameLast": "Winter",
+  "nameInitials": null,
+  "sex": "M",
+  "language": "E",
+  "phoneNumber": null,
+  "email": "waltwinter@itelo.info",
+  "loginName": "WINTERW",
+  "Currency_code": "USD",
+  "salaryAmount": 10000,
+  "accountNumber": "7766554433",
+  "bankId": "121000358",
+  "bankName": "My Bank of San Francisco"
+
+}
+
+
+
+### get to read the single employee
+GET  http://localhost:4004/odata/v4/CatalogService/EmployeeSet/e76e1d2e-05a6-439a-9962-baef73b326e9
+
+### patch to update salary amount
+
+patch http://localhost:4004/odata/v4/CatalogService/EmployeeSet/c54ce567-0a4d-41e4-a382-a8ad30662736
+Content-Type: application/json
+
+{
+"salaryAmount": 1000000
+}
+
+
+
+
+
+### to get all po
+http://localhost:4004/odata/v4/CatalogService/POs
+
+
+
+### to get single purchase order
+
+http://localhost:4004/odata/v4/CatalogService/POs/74867AD200E41EDBA5D8B0C98DC38052
+
+### to get theits item data together  asosiation
+http://localhost:4004/odata/v4/CatalogService/POs/74867AD200E41EDBA5D8B0C98DC38052?$expand=Items,PARTNER_GUID
+
+### calling the action
+
+post http://localhost:4004/odata/v4/CatalogService/POs/74867AD200E41EDBA5D8B0C98DC38052/boost
+Content-Type: application/json
+
+{}
+
+### calling the cap functions 
+
+GET http://localhost:4004/odata/v4/CatalogService/POs/74867AD200E41EDBA5D8B0C98DC38052/largestorder() 
+
+
+### custum entity structure of db own logic
+GET  http://localhost:4004/odata/v4/MyService/ReadEmployeeSrv
+
+### testing security
+GET http://localhost:4004/odata/v4/CatalogService/EmployeeSet
+Authorization: Basic anubhav:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
